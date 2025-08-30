@@ -1,0 +1,112 @@
+body{
+    background-color:#96c793;
+    font-family:"Comic Sans MS";
+    text-align:center;
+    margin:25px;
+}
+.header-section{
+    position:relative;
+    width:100%;
+    height:300px;
+    overflow:hidden;
+    border-radius:25px;
+    margin-bottom:20px;
+}
+#header-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:blur(5px) brightness(0.7);
+    z-index:-1;
+    border-radius:25px;
+}
+.header{
+    background-color:#cde0cc;
+    text-align:left;
+    border-radius: 25px;
+    padding:20px;
+    width:600px;
+    height:275px;
+    position: relative;
+}
+.header a{
+    text-decoration:none;
+    color:black;
+}
+.header a:hover{
+    color:#3f543d;
+}
+.profile-pic{
+    position:absolute;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #3f543d;
+    top:20px;
+    right:20px;
+    width:250px;
+    height:250px;
+}
+.aboutme{
+    background-color: #cde0cc;
+    border-radius: 25px;
+    padding:10px;
+    
+}
+.projects{
+    background-color: #cde0cc;
+    border-radius: 25px;
+    padding:10px;
+    
+    
+}
+.project-card1{
+    width:400px;
+    height:450px;
+    float:left;
+    margin:10px;
+    background-color:white;
+    border-radius:25px;
+}
+.project-card2{
+    width:400px;
+    height:450px;
+    float:left;
+    margin:10px;
+    background-color:white;
+    border-radius:25px;
+}
+.project-card3{
+    width:400px;
+    height:450px;
+    float:left;
+    margin:10px;
+    background-color:white;
+    border-radius:25px;
+}
+.project-card4{
+    width:400px;
+    height:450px;
+    float:left;
+    margin:10px;
+    background-color:white;
+    border-radius:25px;
+}
+.project-card5{
+    width:400px;
+    height:450px;
+    float:left;
+    margin:10px;
+    background-color:white;
+    border-radius:25px;
+}
+.project-card6{
+    width:400px;
+    height:450px;
+    float:left;
+    margin:10px;
+    background-color:white;
+    border-radius:25px;
+}
