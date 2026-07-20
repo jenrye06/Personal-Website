@@ -1,69 +1,226 @@
-body{
-    background-color:#96c793;
-    font-family:"Comic Sans MS";
-    text-align:center;
-    margin:25px;
+/* --- Global Reset & Professional Fonts --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
-.header-section{
-    position:relative;
-    width:100%;
-    height:300px;
-    overflow:hidden;
-    border-radius:25px;
-    margin-bottom:20px;
+
+/* --- Dark Theme Palette --- */
+body {
+    background-color: #0d1117; /* Slate Dark Background */
+    color: #c9d1d9;            /* Softer white text reduces eye strain */
+    padding: 60px 0;
+    line-height: 1.6;
 }
-#header-video{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    filter:blur(5px) brightness(0.7);
-    z-index:-1;
-    border-radius:25px;
+
+/* Page Constraints - Centers everything and keeps it from expanding infinitely */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
-.header-text{
-    background-color:#cde0cc;
-    text-align:left;
-    border-radius: 25px;
-    padding:20px;
-    width:600px;
-    height:275px;
-    position: relative;
+
+/* --- Layout: Header Section --- */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #21262d; /* Sleek line separation */
 }
-.profile-pic{
-    position:absolute;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid #3f543d;
-    top:20px;
-    right:20px;
-    width:250px;
-    height:250px;
+
+.header-text h2 {
+    color: #58a6ff; /* Vibrant Electric Blue Accent */
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
 }
-.aboutme{
-    background-color: #cde0cc;
-    border-radius: 25px;
-    padding:10px;  
+
+.header-text h1 {
+    color: #f0f6fc;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
-.projects{
-    background-color: #cde0cc;
-    border-radius: 25px;
-    padding:10px;   
+
+.email-link {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease;
 }
-.project-card{
-    width:400px;
-    height:450px;
-    float:left;
-    margin:10px;
-    background-color:white;
-    border-radius:25px;
+
+.email-link:hover {
+    color: #58a6ff;
 }
-a{
-    text-decoration:none;
-    color:black;
+
+/* Round Profile Image Wrap */
+.profile-wrap {
+    flex-shrink: 0;
 }
-a:hover{
-    color:#3f543d;
+
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #30363d;
+}
+
+/* --- Layout: About Me Section --- */
+.aboutme {
+    margin: 50px 0;
+}
+
+.aboutme h2, .projects h2 {
+    color: #f0f6fc;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.aboutme p {
+    color: #8b949e;
+    font-size: 1.1rem;
+}
+
+/* --- Layout: The Project Grid (Flexbox/Grid hybrid) --- */
+.projects {
+    margin-top: 40px;
+}
+
+.project-grid {
+    display: grid;
+    /* Automatically builds 2 columns on desktops, drops to 1 column on phones */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 24px;
+    margin-top: 20px;
+}
+
+/* Uniform Individual Project Cards */
+.project-card {
+    background-color: #161b22; /* Slightly lighter card element background */
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes the 'View Link' to the exact bottom */
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* Subtle mouse hover feedback effect */
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: #58a6ff;
+}
+
+.project-card h3 {
+    color: #f0f6fc;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.project-card h3 span {
+    color: #8b949e;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.project-card p {
+    color: #8b949e;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Ensures text area expands equally across uneven descriptions */
+}
+
+/* Custom Styled Action Buttons */
+.project-card a {
+    display: inline-block;
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+/* --- Mobile Responsiveness Adjustments --- */
+@media (max-width: 600px) {
+    body {
+        padding: 30px 0;
+    }
+    .header-section {
+        flex-direction: column-reverse; /* Puts image on top for small phones */
+        text-align: center;
+        gap: 20px;
+    }
+    .header-text h1 {
+        font-size: 2rem;
+    }
+}
+
+.social-btn.email-btn{
+    border-color:#8b949e;
+    color:#f0f6fc;
+}
+.social-btn.email-btn:hover{
+    background-color: #30363d;
+    border-color:#c9d1d9;
+}
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.social-btn {
+    display: inline-block;
+    background-color: #1f242c;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.social-btn:hover {
+    background-color: #21262d;
+    border-color: #8b949e;
+    color: #f0f6fc;
+}
+
+/* Accent highlight for the Resume Button */
+.social-btn.resume-btn {
+    border-color: #58a6ff;
+    color: #58a6ff;
+}
+
+.social-btn.resume-btn:hover {
+    background-color: rgba(88, 166, 255, 0.1);
+    color: #f0f6fc;
+}
+.achievements-badges {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background-color: #1f242c;
+    border: 1px solid #30363d;
+    color: #8b949e;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
 }
