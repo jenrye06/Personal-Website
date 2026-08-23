@@ -222,7 +222,7 @@ body {
     display: flex;
     gap: 20px;
 }
-img{
+.project-card img{
     max-width: 100%;
     height: 300px;
     border-radius: 8px;
